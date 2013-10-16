@@ -1,0 +1,9 @@
+{
+	"name": "Omni Tab Manager",
+	"manifest_version": 2,
+	"version": "1.0.0",
+	"description": "TODO",
+	"permissions": [
+		"tabs"
+	],
+}
