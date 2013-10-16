@@ -4,22 +4,35 @@ function open_tab(/* Tab */ tab) {
 	window.close()
 }
 
-function clear_tab_list() {
-	// Not needed?
+function check_match(search, target) {
+	return true;
 }
 
 function update_list(/* String */ search) {
 	var table = document.getElementById("current-hits");
 	for (var i = 0; i < table.children.length; i++) {
-		var row = table.children[i];
-		console.log(row);
+		row = table.children[i];
+		tab = row.firstChild.firstChild.tab;
+		if (check_match(search, tab.title)) {
+			row.style["display"] = "";
+		} else {
+			row.style["display"] = "none";
+		}
 	};
 }
 
 function on_search_change(event) {
 	if (event.charCode === 13) { // Enter
-		// TODO: Get topmost tab
-		// TODO: Open the tab
+		var table = document.getElementById("current-hits");
+		for (var i = 0; i < table.children.length; i++) {
+			row = table.children[i];
+			if (row.style["display"] !== "none") {
+				row.firstChild.firstChild.click();
+				return;
+			}
+		};
+	} else if (event.ctrlKey && event.charCode === 17) { // Ctrl+Q
+		window.close();
 	} else {
 		var search = document.getElementById("search");
 		update_list(search.value);
@@ -33,6 +46,7 @@ function add_tab_to_list(/* Tab */ tab) {
 	var a = document.createElement("a");
 	a.href = "#";
 	a.onclick = function() { open_tab(tab); };
+	a.tab = tab;
 	a.innerHTML = tab.title;
 	td.appendChild(a);
 	tr.appendChild(td);
@@ -47,4 +61,5 @@ chrome.tabs.query({}, function(tabs) {
 	};
 });
 
-document.querySelector('#search').addEventListener('keypress', on_search_change);
+document.querySelector("#search").addEventListener("keypress", on_search_change);
+document.getElementById("search").focus();
