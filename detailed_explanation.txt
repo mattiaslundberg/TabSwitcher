@@ -1,4 +1,4 @@
-TODO
+Fast switching between tabs. To open the tab switcher window press Ctrl+M on windows/linux or Command+M on mac.
 
 Version History
 * 1.0.0 - Initial release

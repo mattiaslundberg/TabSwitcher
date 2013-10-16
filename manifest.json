@@ -2,7 +2,7 @@
 	"name": "Tab Switcher",
 	"manifest_version": 2,
 	"version": "1.0.0",
-	"description": "TODO",
+	"description": "Fast switching between tabs",
 	"permissions": [
 		"tabs"
 	],
