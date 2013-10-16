@@ -5,6 +5,8 @@ function open_tab(/* Tab */ tab) {
 }
 
 function check_match(search, target) {
+	// TODO: Implement a matcher to determine if two strings matches or not.
+	// Return true if match else false.
 	return true;
 }
 
@@ -60,10 +62,17 @@ chrome.tabs.query({}, function(tabs) {
 			var tab = tabs[i];
 			if (tab.id === current.id && tab.windowId === current.windowId)
 				continue;
+			// TODO: Close other tab switchers. How to do this in a robust way?
 			add_tab_to_list(tab);
 		};
 	});
 });
+
+document.body.onkeyup = function(event) {
+	if (event.keyCode === 27) // ESC
+		window.close();
+	// TODO: Navigate tabs with arrow keys.
+}
 
 document.querySelector("#search").addEventListener("keypress", on_search_change);
 document.getElementById("search").focus();
