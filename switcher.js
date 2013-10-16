@@ -55,10 +55,14 @@ function add_tab_to_list(/* Tab */ tab) {
 }
 
 chrome.tabs.query({}, function(tabs) {
-	for (var i = 0; i < tabs.length; i++) {
-		var tab = tabs[i];
-		add_tab_to_list(tab);
-	};
+	chrome.tabs.getCurrent(function (current) {
+		for (var i = 0; i < tabs.length; i++) {
+			var tab = tabs[i];
+			if (tab.id === current.id && tab.windowId === current.windowId)
+				continue;
+			add_tab_to_list(tab);
+		};
+	});
 });
 
 document.querySelector("#search").addEventListener("keypress", on_search_change);
