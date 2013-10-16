@@ -1,0 +1,41 @@
+body {
+	margin: 0;
+	background-color: #ECECEC;
+	font-family: arial;
+	overflow-x: hidden;
+}
+
+h1 {
+	margin: 10px;
+}
+
+/* Styling of tab links */
+a {
+	
+}
+
+/* Styling of table */
+table {
+	width: 100%;
+	margin: 0;
+	padding: 2px;
+	margin: 5px;
+	font-family: arial;
+}
+
+/* Make input fields nicer */
+input[type="text"] {
+	padding: 5px;
+	width: 99%;
+	border: 1px solid #DDDDDD;
+	border-radius: 3px;
+	box-shadow: 0 0 2px #DDDDDD;
+}
+
+input[type="text"]:hover {
+	border:1px solid #CCCCCC;
+}
+
+input[type="text"]:focus {
+	box-shadow:0 0 2px #FFFE00;
+}
