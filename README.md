@@ -1,4 +1,4 @@
-Omni Tab Manager
+Tab Switcher
 ====================
 
 Chrome extension for fast switching between tabs using the omnibar. Available at [chrome web store]()

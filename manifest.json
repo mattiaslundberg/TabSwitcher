@@ -1,9 +1,22 @@
 {
-	"name": "Omni Tab Manager",
+	"name": "Tab Switcher",
 	"manifest_version": 2,
 	"version": "1.0.0",
 	"description": "TODO",
 	"permissions": [
 		"tabs"
 	],
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": true
+	},
+	"commands": {
+		"open-tab-man": {
+			"suggested_key": {
+				"default": "Ctrl+M",
+				"mac": "Command+M"
+			},
+			"description": "Focus the tab switcher."
+		}
+	}
 }
