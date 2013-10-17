@@ -62,7 +62,6 @@ chrome.tabs.query({}, function(tabs) {
 			var tab = tabs[i];
 			if (tab.id === current.id && tab.windowId === current.windowId)
 				continue;
-			// TODO: Close other tab switchers. How to do this in a robust way?
 			add_tab_to_list(tab);
 		};
 	});
