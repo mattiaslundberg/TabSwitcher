@@ -6,6 +6,8 @@ chrome.commands.onCommand.addListener(function(command) {
 			focused: true,
 			height: window.screen.height - 200,
 			width: Math.round(window.screen.width / 3),
+			top: 50,
+			left: Math.round(window.screen.width / 4)
 		});
 	}
 });
