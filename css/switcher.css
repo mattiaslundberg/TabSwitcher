@@ -14,6 +14,10 @@ a {
 	
 }
 
+tr.selected {
+	background-color: green;
+}
+
 /* Styling of table */
 table {
 	width: 100%;
