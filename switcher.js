@@ -4,18 +4,12 @@ function open_tab(/* Tab */ tab) {
 	window.close()
 }
 
-function check_match(search, target) {
-	// TODO: Implement a matcher to determine if two strings matches or not.
-	// Return true if match else false.
-	return true;
-}
-
 function update_list(/* String */ search) {
 	var table = document.getElementById("current-hits");
 	for (var i = 0; i < table.children.length; i++) {
 		row = table.children[i];
 		tab = row.firstChild.firstChild.tab;
-		if (check_match(search, tab.title)) {
+		if (matching(search, tab.title)) {
 			row.style["display"] = "";
 		} else {
 			row.style["display"] = "none";
@@ -136,5 +130,5 @@ document.body.onkeyup = function(event) {
 		move_selection_up(); // TODO: Prevent default
 };
 
-document.querySelector("#search").addEventListener("keypress", on_search_change);
+document.querySelector("#search").addEventListener("keyup", on_search_change);
 document.getElementById("search").focus();
