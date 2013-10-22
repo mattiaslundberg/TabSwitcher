@@ -1,6 +1,6 @@
-var currentWindow;
+var current_window;
 
-function showSwitcher() {
+function show_switcher() {
 	chrome.windows.create({
 		url: "switcher.html",
 		type: "popup",
@@ -10,26 +10,26 @@ function showSwitcher() {
 		top: 50,
 		left: Math.round(window.screen.width / 4)
 	}, function (window) {
-		currentWindow = window;
+		current_window = window;
 	});
 }
 
 
 chrome.commands.onCommand.addListener(function(command) {
 	if (command === "open-tab-man") {
-		if (currentWindow !== undefined) {
+		if (current_window !== undefined) {
 			chrome.windows.getAll({}, function(windows) {
 				var present = false;
 				for (var i = 0; i < windows.length; i++) {
 					var window = windows[i];
-					if (window.id === currentWindow.id)
+					if (window.id === current_window.id)
 						present = true;
 				};
 				if (!present) // Only open if not already shown
-					showSwitcher();
+					show_switcher();
 			});
 		} else {
-			showSwitcher();
+			show_switcher();
 		}
 	}
 });
