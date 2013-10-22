@@ -29,7 +29,7 @@ function matching(search, match_to) {
 }
 
 function on_search_change(event) {
-	if (event.charCode === 13) { // Enter
+	if (event.keyCode === 13) { // Enter
 		var table = document.getElementById("current-hits");
 		for (var i = 0; i < table.children.length; i++) {
 			row = table.children[i];
