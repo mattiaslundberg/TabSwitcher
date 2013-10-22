@@ -11,20 +11,32 @@ h1 {
 
 /* Styling of tab links */
 a {
-	
-}
-
-tr.selected {
-	background-color: green;
+	color: #292929;
+	text-decoration: none;
 }
 
 /* Styling of table */
 table {
-	width: 100%;
+	width: 97%;
 	margin: 0;
 	padding: 2px;
 	margin: 5px;
 	font-family: arial;
+}
+
+tr > td {
+	border: 2px solid #ECECEC;
+	overflow: hidden;
+}
+
+tr.selected {
+	background-color: #DDDDDD;
+	border: 2px solid #000000;
+}
+
+tr.selected > td {
+	border: 2px solid #2C2C2C;
+	border-radius: 3px;
 }
 
 /* Make input fields nicer */
@@ -38,8 +50,4 @@ input[type="text"] {
 
 input[type="text"]:hover {
 	border:1px solid #CCCCCC;
-}
-
-input[type="text"]:focus {
-	box-shadow:0 0 2px #FFFE00;
 }
