@@ -19,6 +19,18 @@ function update_list(/* String */ search) {
 	};
 }
 
+function matching(search, match_to) {
+	var regex = "^.*"; // "$/i";
+	
+	for (var i = 0; i < search.length; i++) {
+		regex += search[i] + ".*";
+	};
+	regex += "$";
+	console.debug(regex);
+	var re = new RegExp(regex, "i")
+	return match_to.match(re);
+}
+
 function on_search_change(event) {
 	if (event.charCode === 13) { // Enter
 		var table = document.getElementById("current-hits");
