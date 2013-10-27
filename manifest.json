@@ -18,5 +18,10 @@
 			},
 			"description": "Focus the tab switcher."
 		}
+	},
+	"icons": {
+		"16": "images/logo16.png",
+		"64": "images/logo64.png",
+		"128": "images/logo128.png"
 	}
 }
